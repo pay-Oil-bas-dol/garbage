@@ -6,13 +6,7 @@ import {
   Key,
   Database,
   RefreshCw,
-  FolderOpen,
   CheckCircle,
-  ExternalLink,
-  ShieldCheck,
-  Cpu,
-  Download,
-  FileCode,
 } from 'lucide-react';
 import { getSavedGeminiKey, saveGeminiKey, resetDemoData } from '@/lib/store';
 import { isSupabaseConfigured } from '@/lib/supabase';
@@ -21,14 +15,14 @@ interface SettingsModalProps {
   isOpen: boolean;
   onClose: () => void;
   onDataReset: () => void;
-  onTriggerDemoPair: (pairNumber: 1 | 2) => void;
+  onTriggerDemoPair?: (pairNumber: 1 | 2) => void;
+  onOpenTeam?: () => void;
 }
 
 export const SettingsModal: React.FC<SettingsModalProps> = ({
   isOpen,
   onClose,
   onDataReset,
-  onTriggerDemoPair,
 }) => {
   const [apiKey, setApiKey] = useState(getSavedGeminiKey());
   const [savedSuccess, setSavedSuccess] = useState(false);
@@ -42,7 +36,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   };
 
   const handleReset = () => {
-    if (confirm('Reset all demo missions and restore default user Aarav Sharma?')) {
+    if (confirm('Reset all demo missions and restore default registered accounts?')) {
       resetDemoData();
       onDataReset();
       onClose();
@@ -131,61 +125,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               ? 'Real PostgreSQL database and edge storage active.'
               : 'App runs seamlessly in persistent offline storage mode. Configure NEXT_PUBLIC_SUPABASE_URL in .env to link real Supabase.'}
           </p>
-        </div>
-
-        {/* Project Source Code Download */}
-        <div className="bg-emerald-50/80 border border-emerald-300 rounded-2xl p-3.5 space-y-2 text-xs">
-          <div className="flex items-center space-x-1.5 font-bold text-emerald-950">
-            <FileCode className="w-4 h-4 text-emerald-700" />
-            <span>Complete Project Source Code (.zip):</span>
-          </div>
-          <p className="text-[11px] text-emerald-800 leading-normal">
-            Download the entire Clean &amp; Earn repository packaged with all Next.js code, AI routes, Supabase schema, and demo assets.
-          </p>
-          <a
-            href="/Clean_and_Earn_Source_Code.zip"
-            download="Clean_and_Earn_Source_Code.zip"
-            className="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs flex items-center justify-center space-x-2 shadow-sm transition-all hover:scale-102"
-          >
-            <Download className="w-3.5 h-3.5" />
-            <span>Download Source Code (.zip)</span>
-          </a>
-        </div>
-
-        {/* Demo Assets presentation guide */}
-        <div className="bg-amber-50/80 border border-amber-200 rounded-2xl p-3.5 space-y-2 text-xs">
-          <div className="flex items-center space-x-1.5 font-bold text-amber-900">
-            <FolderOpen className="w-4 h-4 text-amber-700" />
-            <span>Classroom Demo Assets (`/demo-assets`):</span>
-          </div>
-          <ul className="text-[11px] text-amber-900/90 space-y-1 pl-1">
-            <li>
-              • <strong className="font-semibold">Pair 1:</strong> Genuine cleanup photos of an Indian street corner. Verified &amp; awarded 40+ points.
-            </li>
-            <li>
-              • <strong className="font-semibold">Pair 2:</strong> Fake test (street before vs. cat meme after). Rejected by AI with polite explanation.
-            </li>
-          </ul>
-          <div className="flex space-x-2 pt-1">
-            <button
-              onClick={() => {
-                onClose();
-                onTriggerDemoPair(1);
-              }}
-              className="flex-1 py-1.5 bg-white hover:bg-emerald-50 text-emerald-800 font-bold text-[10px] rounded-lg border border-emerald-300 transition-colors"
-            >
-              Test Real Pair 1
-            </button>
-            <button
-              onClick={() => {
-                onClose();
-                onTriggerDemoPair(2);
-              }}
-              className="flex-1 py-1.5 bg-white hover:bg-rose-50 text-rose-800 font-bold text-[10px] rounded-lg border border-rose-300 transition-colors"
-            >
-              Test Fake Pair 2
-            </button>
-          </div>
         </div>
 
         {/* Reset Demo Data Button */}

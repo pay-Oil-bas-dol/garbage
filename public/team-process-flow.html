@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean &amp; Earn — Project Team &amp; Process Flow Presentation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #F8FAF6;
+    }
+    pre, code, .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .slide { display: none; }
+    .slide.active { display: flex; }
+    .nature-bg-pattern {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5lY28tbGVhZiB7IGZpbGw6ICMwNDc4NTc7IH0KICAgICAgLmVjby1yZWN5Y2xlIHsgZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDY1RjQ2OyBzdHJva2Utd2lkdGg6IDg7IHN0cm9rZS1saW5lY2FwOiByb3VuZDsgc3Ryb2tlLWxpbmVqb2luOiByb3VuZDsgfQogICAgICAuZWNvLXNwcm91dCB7IGZpbGw6ICMwNTk2Njk7IH0KICAgICAgLmVjby1nbG9iZSB7IGZpbGw6IG5vbmU7IHN0cm9rZTogIzA0Nzg1Nzsgc3Ryb2tlLXdpZHRoOiA2OyB9CiAgICAgIC5lY28tZG90IHsgZmlsbDogIzEwQjk4MTsgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CgogIDwhLS0gRWNvIE1vdGlmIDE6IFJlY3ljbGluZyBUcmlhbmdsZSAoVG9wLUxlZnQpIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYwLCA2MCkgc2NhbGUoMC43KSI+CiAgICA8cGF0aCBjbGFzcz0iZWNvLXJlY3ljbGUiIGQ9Ik0gNDAsLTQwIEMgNjUsLTQwIDc1LC0xNSA3NSwxMCBMIDg1LDIgTSA3NSwxMCBMIDYwLDE4IiAvPgogICAgPHBhdGggY2xhc3M9ImVjby1yZWN5Y2xlIiBkPSJNIDYwLDM1IEMgNDUsNjUgMTUsNjUgLTE1LDY1IEwgLTgsNzggTSAtMTUsNjUgTCAtMTAsNTAiIC8+CiAgICA8cGF0aCBjbGFzcz0iZWNvLXJlY3ljbGUiIGQ9Ik0gLTM1LDUwIEMgLTY1LDMwIC02NSwtNSAtNDUsLTMwIEwgLTU1LC0yMCBNIC00NSwtMzAgTCAtMzAsLTMyIiAvPgogIDwvZz4KCiAgPCEtLSBFY28gTW90aWYgMjogTHVzaCBDdXJ2ZWQgTGVhZiAoVG9wLVJpZ2h0KSAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMTAsIDgwKSByb3RhdGUoMjUpIHNjYWxlKDAuODUpIj4KICAgIDxwYXRoIGNsYXNzPSJlY28tbGVhZiIgZD0iTSAwLC02MCBDIDQ1LC00NSA2MCwxNSAwLDYwIEMgLTYwLDE1IC00NSwtNDUgMCwtNjAgWiIgLz4KICAgIDxwYXRoIGQ9Ik0gMCwtNTAgTCAwLDU1IiBzdHJva2U9IiNFQ0ZERjUiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPgogICAgPHBhdGggZD0iTSAwLC0yMCBRIDIwLC0xMCAzMCwtNSIgc3Ryb2tlPSIjRUNGREY1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwOiByb3VuZCIgZmlsbD0ibm9uZSIgLz4KICAgIDxwYXRoIGQ9Ik0gMCw1IFEgMjAsMTUgMjgsMjIiIHN0cm9rZT0iI0VDRkRGNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiIC8+CiAgICA8cGF0aCBkPSJNIDAsLTEwIFEgLTIwLDAgLTI4LDUiIHN0cm9rZT0iI0VDRkRGNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiIC8+CiAgICA8cGF0aCBkPSJNIDAsMTUgUSAtMjAsMjUgLTI2LDMyIiBzdHJva2U9IiNFQ0ZERjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIiAvPgogIDwvZz4KCiAgPCEtLSBFY28gTW90aWYgMzogU3Byb3V0aW5nIFNlZWRsaW5nIChDZW50ZXIpIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwMCwgMjEwKSBzY2FsZSgwLjkpIj4KICAgIDxwYXRoIGQ9Ik0gMCw0NSBRIDAsLTE1IDE1LC0zNSIgc3Ryb2tlPSIjMDQ3ODU3IiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwOiByb3VuZCIgZmlsbD0ibm9uZSIgLz4KICAgIDxwYXRoIGNsYXNzPSJlY28tc3Byb3V0IiBkPSJNIDAsLTEwIEMgLTI1LC0zMCAtMzUsNSAwLDAgWiIgLz4KICAgIDxwYXRoIGNsYXNzPSJlY28tc3Byb3V0IiBkPSJNIDEyLC0zMCBDIDM1LC01MCA0NSwtMTUgMTAsLTIwIFoiIC8+CiAgICA8Y2lyY2xlIGN4PSIwIiBjeT0iNDgiIHI9IjQiIGNsYXNzPSJlY28tZG90IiAvPgogIDwvZz4KCiAgPCEtLSBFY28gTW90aWYgNDogU2Vjb25kIExlYWYgTW90aWYgKEJvdHRvbS1MZWZ0KSAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MCwgMzEwKSByb3RhdGUoLTQwKSBzY2FsZSgwLjc1KSI+CiAgICA8cGF0aCBjbGFzcz0iZWNvLWxlYWYiIGQ9Ik0gMCwtNTAgQyAzNSwtMzUgNTAsMTAgMCw1MCBDIC01MCwxMCAtMzUsLTM1IDAsLTUwIFoiIC8+CiAgICA8cGF0aCBkPSJNIDAsLTQwIEwgMCw0NSIgc3Ryb2tlPSIjRUNGREY1IiBzdHJva2Utd2lkdGg9IjMuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiAvPgogICAgPHBhdGggZD0iTSAwLC0xNSBRIDE4LC04IDI1LC00IiBzdHJva2U9IiNFQ0ZERjUiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiIC8+CiAgICA8cGF0aCBkPSJNIDAsLTUgUSAtMTgsMiAtMjQsNiIgc3Ryb2tlPSIjRUNGREY1IiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIiAvPgogIDwvZz4KCiAgPCEtLSBFY28gTW90aWYgNTogUmVjeWNsZSBBcnJvdyBDaXJjbGUgKEJvdHRvbS1SaWdodCkgLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzEwLCAzMTApIHNjYWxlKDAuNykiPgogICAgPHBhdGggY2xhc3M9ImVjby1yZWN5Y2xlIiBkPSJNIDQwLC00MCBDIDY1LC00MCA3NSwtMTUgNzUsMTAgTCA4NSwyIE0gNzUsMTAgTCA2MCwxOCIgLz4KICAgIDxwYXRoIGNsYXNzPSJlY28tcmVjeWNsZSIgZD0iTSA2MCwzNSBDIDQ1LDY1IDE1LDY1IC0xNSw2NSBMIC04LDc4IE0gLTE1LDY1IEwgLTEwLDUwIiAvPgogICAgPHBhdGggY2xhc3M9ImVjby1yZWN5Y2xlIiBkPSJNIC0zNSw1MCBDIC02NSwzMCAtNjUsLTUgLTQ1LC0zMCBMIC01NSwtMjAgTSAtNDUsLTMwIEwgLTMwLC0zMiIgLz4KICA8L2c+CgogIDwhLS0gRmxvYXRpbmcgbmF0dXJlIGFjY2VudCBkb3RzIC8gc2VlZHMgLS0+CiAgPGNpcmNsZSBjeD0iMTgwIiBjeT0iNzAiIHI9IjYiIGNsYXNzPSJlY28tZG90IiAvPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iMTkwIiByPSI1IiBjbGFzcz0iZWNvLWRvdCIgLz4KICA8Y2lyY2xlIGN4PSIzNTAiIGN5PSIyMDAiIHI9IjciIGNsYXNzPSJlY28tZG90IiAvPgogIDxjaXJjbGUgY3g9IjIxMCIgY3k9IjM1MCIgcj0iNiIgY2xhc3M9ImVjby1kb3QiIC8+CiAgPGNpcmNsZSBjeD0iMTMwIiBjeT0iMjMwIiByPSI0IiBjbGFzcz0iZWNvLWRvdCIgLz4KICA8Y2lyY2xlIGN4PSIyODAiIGN5PSIxNDAiIHI9IjUiIGNsYXNzPSJlY28tZG90IiAvPgo8L3N2Zz4K');
+      background-repeat: repeat;
+      background-size: 360px 360px;
+      opacity: 0.10;
+    }
+    .light-card-shadow {
+      box-shadow: 0 20px 40px -15px rgba(6, 78, 59, 0.08), 0 0 1px 1px rgba(16, 185, 129, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAF6] text-slate-800 min-h-screen flex flex-col justify-between select-none relative overflow-x-hidden">
+
+  <!-- Fixed 10% Opacity Nature & Leaves Background Overlay -->
+  <div class="fixed inset-0 pointer-events-none z-0 nature-bg-pattern"></div>
+
+  <!-- Top Navigation & Controls Header -->
+  <header class="bg-white/95 backdrop-blur-md border-b-2 border-emerald-200/80 px-4 sm:px-8 py-3.5 flex items-center justify-between z-50 sticky top-0 shadow-md">
+    <div class="flex items-center space-x-3.5">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 flex items-center justify-center text-xl font-bold text-white shadow-md shadow-emerald-950/20">
+        👥
+      </div>
+      <div>
+        <h1 class="text-base sm:text-lg font-black text-slate-900 leading-tight flex items-center gap-2">
+          Project Team &amp; Process Flow
+          <span class="bg-emerald-100 text-emerald-800 text-xs px-2.5 py-0.5 rounded-full font-bold border border-emerald-300 hidden sm:inline">
+            8 Slides • Engineering Roles &amp; Prompt Extraction
+          </span>
+        </h1>
+        <p class="text-xs sm:text-sm text-emerald-700 font-semibold">
+          Step-by-Step Roles • Prompts Extracted • Individual Ownership Matrix
+        </p>
+      </div>
+    </div>
+
+    <!-- Top Action Buttons -->
+    <div class="flex items-center space-x-2 sm:space-x-2.5">
+      <!-- Launch Live Web App -->
+      <a href="/" class="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white text-xs sm:text-sm font-bold px-3 py-2 rounded-xl transition-all flex items-center space-x-1 shadow-md hover:scale-105 active:scale-95" title="Open Live Clean & Earn Web Application">
+        <span>🚀 Live App</span>
+      </a>
+
+      <!-- View Main 19-Slide Project Presentation -->
+      <a href="/presentation.html" class="bg-white hover:bg-emerald-50 text-emerald-900 border-2 border-emerald-300 text-xs sm:text-sm font-bold px-3 py-2 rounded-xl transition-all flex items-center space-x-1 shadow-2xs hover:scale-105 active:scale-95" title="Switch to Main 19-Slide Product Presentation">
+        <span>📊 Main Deck</span>
+      </a>
+
+      <!-- Download PDF Button -->
+      <a href="/Team_and_Process_Flow_Presentation.pdf" download="Team_and_Process_Flow_Presentation.pdf" class="bg-teal-700 hover:bg-teal-800 text-white text-xs sm:text-sm font-bold px-3 py-2 rounded-xl transition-all flex items-center space-x-1 shadow-md hover:scale-105 active:scale-95" title="Download Printable Team Flow Presentation PDF">
+        <span>📄 PDF</span>
+      </a>
+
+      <!-- Download Word (.docx) Button -->
+      <a href="/Team_and_Process_Flow_Presentation.docx" download="Team_and_Process_Flow_Presentation.docx" class="bg-gradient-to-r from-emerald-800 to-teal-800 hover:opacity-95 text-white text-xs sm:text-sm font-bold px-3 py-2 rounded-xl transition-all flex items-center space-x-1 shadow-md hover:scale-105 active:scale-95" title="Download Highly Structured Word Document (.docx)">
+        <span>📝 Word (.docx)</span>
+      </a>
+
+      <!-- Speaker Notes Toggle -->
+      <button id="toggleNotesBtn" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-900 text-xs sm:text-sm font-bold px-3 py-2 rounded-xl transition-colors border border-emerald-300 shadow-sm">
+        🎙️ Notes
+      </button>
+
+      <!-- Slide Counter -->
+      <span id="slideCounter" class="text-xs sm:text-sm font-mono font-black bg-emerald-100/90 px-3.5 py-2 rounded-xl text-emerald-900 border border-emerald-300 shadow-sm">
+        1 / 8
+      </span>
+    </div>
+  </header>
+
+  <!-- Slide Container -->
+  <main class="flex-1 flex items-center justify-center p-4 sm:p-8 max-w-7xl mx-auto w-full z-10 relative">
+
+    <!-- ========================================== -->
+    <!-- SLIDE 1: TITLE & TEAM ROSTER               -->
+    <!-- ========================================== -->
+    <div class="slide active flex-col justify-center items-center text-center max-w-5xl p-8 sm:p-12 bg-gradient-to-br from-emerald-50/95 via-white/95 to-teal-50/95 rounded-3xl border-2 border-emerald-300/80 light-card-shadow relative overflow-hidden w-full" data-notes="Good morning, respected faculty and evaluators. This dedicated presentation focuses on our Project Team, Engineering Process Flow, and Step-by-Step Contributions for Clean & Earn (SafaiSaathi). Over the course of developing this full-stack application, every prompt, design iteration, and engineering decision was divided among our 7 team members across three specialized divisions: App Development & PPT Planning led by Divyanshu and Aritra; Research and Civic Specifications led by Nikhil; and rigorous Bug Testing and Quality Assurance conducted by Anurag, Sobhit, Aman, and Amrit.">
+      <div class="absolute -top-24 -right-24 w-80 h-80 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-teal-200/40 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="inline-flex items-center space-x-2 bg-emerald-100/90 border border-emerald-300 px-4 py-1.5 rounded-full text-emerald-900 text-xs sm:text-sm font-black uppercase tracking-wider mb-4 shadow-sm">
+        <span>👥 Project Team &amp; Process Flow Presentation</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-2">
+        Step-by-Step Engineering Roles &amp; Contributions
+        <span class="block text-2xl sm:text-3xl font-extrabold text-emerald-700 mt-1 font-sans">
+          Clean &amp; Earn (सफ़ाई साथी) Development Lifecycle
+        </span>
+      </h1>
+
+      <p class="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto mb-6 leading-relaxed font-medium">
+        Extracting user prompts, feature requests, and system architecture tasks across the multi-agent development trajectory into individual ownership divisions.
+      </p>
+
+      <!-- 3 Division Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-4xl mb-6 text-left">
+        <!-- Division 1 -->
+        <div class="bg-white/95 border-2 border-emerald-300 rounded-2xl p-4 shadow-xs space-y-1.5">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-md">
+              💻 App Dev &amp; PPT Planning
+            </span>
+            <span class="text-base">🛠️</span>
+          </div>
+          <h3 class="text-base font-black text-slate-900">Divyanshu &amp; Aritra</h3>
+          <p class="text-xs text-slate-600 leading-snug">
+            Next.js 16 UI, Gemini 1.5 Flash Vision API (`/api/verify`), Supabase PostgreSQL, Rewards Store, Auth Engine &amp; 19-Slide Interactive Deck.
+          </p>
+        </div>
+
+        <!-- Division 2 -->
+        <div class="bg-white/95 border-2 border-teal-300 rounded-2xl p-4 shadow-xs space-y-1.5">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-black uppercase tracking-wider text-teal-800 bg-teal-100 px-2 py-0.5 rounded-md">
+              🔬 Research &amp; Suggestions
+            </span>
+            <span class="text-base">📋</span>
+          </div>
+          <h3 class="text-base font-black text-slate-900">Nikhil</h3>
+          <p class="text-xs text-slate-600 leading-snug">
+            Swachh Bharat municipal solid waste rules, 4 waste taxonomy categories, 20–50 Green Points reward economics, and 14-brand coupon partnerships.
+          </p>
+        </div>
+
+        <!-- Division 3 -->
+        <div class="bg-white/95 border-2 border-amber-300 rounded-2xl p-4 shadow-xs space-y-1.5">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-black uppercase tracking-wider text-amber-900 bg-amber-100 px-2 py-0.5 rounded-md">
+              🛡️ Bug Testing &amp; Feedback
+            </span>
+            <span class="text-base">🔍</span>
+          </div>
+          <h3 class="text-base font-black text-slate-900">Anurag, Sobhit, Aman, Amrit</h3>
+          <p class="text-xs text-slate-600 leading-snug">
+            Camera viewfinder QA, Pair 1 vs Pair 2 cat meme fraud detection, high-contrast typography, points ledger verification, and old-password auth check.
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Stats Banner -->
+      <div class="bg-emerald-100/70 border border-emerald-300/80 px-6 py-2.5 rounded-xl w-full max-w-4xl flex items-center justify-around text-xs sm:text-sm text-emerald-950 font-bold">
+        <span>📌 7 Active Team Members</span>
+        <span>•</span>
+        <span>💬 18 Core Prompts Extracted</span>
+        <span>•</span>
+        <span>⚡ 5-Phase End-to-End Progress Flow</span>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 2: THE MASTER PROCESS FLOW           -->
+    <!-- ========================================== -->
+    <div class="slide flex-col max-w-6xl p-6 sm:p-10 bg-white/95 rounded-3xl border-2 border-emerald-200/90 light-card-shadow w-full" data-notes="On this slide, we present our Master 5-Phase Development Process Flow. Rather than working in isolation, our engineering proceeded through five clear milestones. First, Nikhil defined the domain requirements and civic guidelines. Next, Divyanshu and Aritra architected the full-stack Next.js 16 app and Gemini Vision AI route. Then they built the 19-slide presentation deck. In Phase 4, Anurag, Sobhit, Aman, and Amrit performed exhaustive bug testing. Finally in Phase 5, all recommendations were integrated into our live production release on Vercel.">
+      <div class="inline-block bg-emerald-100/90 text-emerald-800 text-xs sm:text-sm font-black px-3.5 py-1 rounded-full uppercase tracking-wider mb-2 border border-emerald-300 w-fit">
+        Slide 2 — Master Process Flow &amp; Timeline
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-1">
+        How the Project Progressed: 5-Phase Master Timeline
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-600 mb-5 font-medium">
+        Sequential execution pipeline mapping prompt requests to team divisions and technical code outputs.
+      </p>
+
+      <!-- 5-Phase Horizontal Timeline Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 mb-6">
+        <!-- Phase 1 -->
+        <div class="bg-teal-50/90 border-2 border-teal-300 rounded-2xl p-3.5 space-y-1.5 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <span class="w-6 h-6 rounded-full bg-teal-600 text-white text-xs font-black flex items-center justify-center">1</span>
+            <span class="text-[9px] font-black uppercase tracking-wider bg-teal-200 text-teal-900 px-1.5 py-0.2 rounded">Phase 1</span>
+          </div>
+          <h4 class="text-xs font-black text-slate-900">Research &amp; Specs</h4>
+          <p class="text-[11px] text-teal-950 font-bold">Owner: Nikhil</p>
+          <p class="text-[10px] text-slate-600 leading-tight">
+            Swachh Bharat norms, 4 waste taxonomy categories, 20–50 pts economy &amp; brand coupon model.
+          </p>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="bg-emerald-50/90 border-2 border-emerald-300 rounded-2xl p-3.5 space-y-1.5 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white text-xs font-black flex items-center justify-center">2</span>
+            <span class="text-[9px] font-black uppercase tracking-wider bg-emerald-200 text-emerald-900 px-1.5 py-0.2 rounded">Phase 2</span>
+          </div>
+          <h4 class="text-xs font-black text-slate-900">App &amp; AI Build</h4>
+          <p class="text-[11px] text-emerald-950 font-bold">Divyanshu &amp; Aritra</p>
+          <p class="text-[10px] text-slate-600 leading-tight">
+            Next.js 16 UI, Gemini 1.5 Flash Vision AI route, Supabase schemas, and reactive fallback store.
+          </p>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="bg-emerald-50/90 border-2 border-emerald-300 rounded-2xl p-3.5 space-y-1.5 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <span class="w-6 h-6 rounded-full bg-emerald-700 text-white text-xs font-black flex items-center justify-center">3</span>
+            <span class="text-[9px] font-black uppercase tracking-wider bg-emerald-200 text-emerald-900 px-1.5 py-0.2 rounded">Phase 3</span>
+          </div>
+          <h4 class="text-xs font-black text-slate-900">Interactive PPT</h4>
+          <p class="text-[11px] text-emerald-950 font-bold">Divyanshu &amp; Aritra</p>
+          <p class="text-[10px] text-slate-600 leading-tight">
+            19-slide deck with Light Green theme, 10% nature pattern, draggable Mermaid flows &amp; notes.
+          </p>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="bg-amber-50/90 border-2 border-amber-300 rounded-2xl p-3.5 space-y-1.5 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <span class="w-6 h-6 rounded-full bg-amber-600 text-white text-xs font-black flex items-center justify-center">4</span>
+            <span class="text-[9px] font-black uppercase tracking-wider bg-amber-200 text-amber-950 px-1.5 py-0.2 rounded">Phase 4</span>
+          </div>
+          <h4 class="text-xs font-black text-slate-900">Bug Testing &amp; QA</h4>
+          <p class="text-[11px] text-amber-950 font-bold">Anurag, Sobhit, Aman, Amrit</p>
+          <p class="text-[10px] text-slate-600 leading-tight">
+            Pair 1 vs Pair 2 meme tests, viewport QA, security audit, and recommendations provision.
+          </p>
+        </div>
+
+        <!-- Phase 5 -->
+        <div class="bg-green-50/90 border-2 border-green-400 rounded-2xl p-3.5 space-y-1.5 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <span class="w-6 h-6 rounded-full bg-green-700 text-white text-xs font-black flex items-center justify-center">5</span>
+            <span class="text-[9px] font-black uppercase tracking-wider bg-green-200 text-green-950 px-1.5 py-0.2 rounded">Phase 5</span>
+          </div>
+          <h4 class="text-xs font-black text-slate-900">Deploy &amp; Polish</h4>
+          <p class="text-[11px] text-green-950 font-bold">All 7 Members</p>
+          <p class="text-[10px] text-slate-600 leading-tight">
+            Old-password auth, 14-brand rewards store, zip bundle, and live Vercel edge deployment.
+          </p>
+        </div>
+      </div>
+
+      <!-- Prompt Flow Mapping Table -->
+      <div class="overflow-x-auto bg-slate-50 border border-slate-200 rounded-2xl p-3.5">
+        <h4 class="text-xs font-black uppercase tracking-wider text-slate-700 mb-2">
+          Prompts &amp; Requirements to Team Division Traceability Matrix
+        </h4>
+        <table class="w-full text-left text-xs">
+          <thead>
+            <tr class="border-b border-slate-200 text-slate-500 font-bold">
+              <th class="pb-1.5">Milestone / Prompt Category</th>
+              <th class="pb-1.5">Key Prompts Extracted</th>
+              <th class="pb-1.5">Lead Owner</th>
+              <th class="pb-1.5">Delivered Artifact</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200/70 text-slate-700 font-medium text-[11px]">
+            <tr>
+              <td class="py-1.5 font-bold text-teal-900">Civic Taxonomy &amp; Incentives</td>
+              <td class="py-1.5">"Build full-stack web app... 20-50 pts... categories: plastic, organic, mixed"</td>
+              <td class="py-1.5 font-bold">Nikhil</td>
+              <td class="py-1.5">Civic specs &amp; 4 Waste Categories</td>
+            </tr>
+            <tr>
+              <td class="py-1.5 font-bold text-emerald-900">Core Full-Stack Build</td>
+              <td class="py-1.5">"Next.js App Router, Tailwind, Supabase PostgreSQL, Gemini 1.5 Flash Vision"</td>
+              <td class="py-1.5 font-bold">Divyanshu &amp; Aritra</td>
+              <td class="py-1.5">`/api/verify` &amp; Mobile Shell</td>
+            </tr>
+            <tr>
+              <td class="py-1.5 font-bold text-emerald-900">Presentation Deck Planning</td>
+              <td class="py-1.5">"Create presentation deck... pan &amp; zoom Mermaid diagrams... 10-line tech stack"</td>
+              <td class="py-1.5 font-bold">Divyanshu &amp; Aritra</td>
+              <td class="py-1.5">19-Slide Interactive Deck</td>
+            </tr>
+            <tr>
+              <td class="py-1.5 font-bold text-amber-900">Bug Testing &amp; Anti-Fraud</td>
+              <td class="py-1.5">"Test genuine street vs fake meme photo... verify rejection with explanation"</td>
+              <td class="py-1.5 font-bold">Anurag &amp; Sobhit</td>
+              <td class="py-1.5">Pair 1 vs Pair 2 QA Suite</td>
+            </tr>
+            <tr>
+              <td class="py-1.5 font-bold text-green-900">Rewards &amp; Auth Security Overhaul</td>
+              <td class="py-1.5">"Add coupon redeem Amazon/Flipkart/Zomato... remove default Aarav... old password check"</td>
+              <td class="py-1.5 font-bold">Aman &amp; Amrit</td>
+              <td class="py-1.5">RewardsCatalog &amp; AuthModal</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- SLIDE 3: NIKHIL (RESEARCH & SUGGESTIONS)             -->
+    <!-- ==================================================== -->
+    <div class="slide flex-col max-w-5xl p-6 sm:p-10 bg-white/95 rounded-3xl border-2 border-teal-200/90 light-card-shadow w-full" data-notes="Slide 3 showcases Nikhil's research leadership. When we started Clean & Earn, the first prompt specified that the platform must gamify street cleaning in India with 20 to 50 points. Nikhil took charge of translating the Swachh Bharat mission norms into software specifications. He researched municipal waste guidelines and structured our four distinct categories: Organic, Plastic, E-Waste, and Mixed. He also designed the anti-fraud GPS boundary of 50 meters and researched the initial brand reward alignments for Amazon, Flipkart, and food delivery partners.">
+      <div class="inline-block bg-teal-100 text-teal-800 text-xs sm:text-sm font-black px-3.5 py-1 rounded-full uppercase tracking-wider mb-2 border border-teal-300 w-fit">
+        Slide 3 — Research &amp; Suggestions
+      </div>
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
+            Nikhil — Domain Research &amp; Civic Architecture
+          </h2>
+          <p class="text-xs sm:text-sm text-teal-800 font-bold">
+            Swachh Bharat Guidelines, 4 Waste Categories, 20–50 Green Points &amp; Brand Rewards Model
+          </p>
+        </div>
+        <div class="w-12 h-12 rounded-2xl bg-teal-50 border-2 border-teal-300 flex items-center justify-center text-2xl shrink-0">
+          🔬
+        </div>
+      </div>
+
+      <!-- Extracted Prompts Box -->
+      <div class="bg-teal-50/70 border-2 border-teal-200 rounded-2xl p-4 mb-5">
+        <span class="text-xs font-black uppercase tracking-wider text-teal-900 block mb-1">
+          💬 Prompts &amp; Requirements Led by Nikhil:
+        </span>
+        <blockquote class="text-xs sm:text-sm text-slate-700 italic font-medium leading-relaxed">
+          &quot;Build a full-stack social environmental web application optimized for mobile browsers, designed to encourage and gamify street cleaning in India. Users can report garbage, clean it, and earn points (20-50) based on AI verification of 'Before' and 'After' photos... Categories: Plastic Waste, Organic/Wet Waste, Mixed Litter, E-Waste.&quot;
+        </blockquote>
+      </div>
+
+      <!-- 3 Key Contributions Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+        <div class="bg-white border-2 border-slate-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <span class="text-[10px] font-black uppercase text-teal-700 block">1. Waste Taxonomy</span>
+          <h4 class="text-xs font-black text-slate-900">4 Municipal Categories</h4>
+          <p class="text-[11px] text-slate-600 leading-snug">
+            Aligned categories with Indian Municipal Solid Waste bylaws: Organic, Recyclable Plastic, Dangerous E-Waste, and Mixed Street Litter.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <span class="text-[10px] font-black uppercase text-teal-700 block">2. Economic Allotment</span>
+          <h4 class="text-xs font-black text-slate-900">20–50 Green Points</h4>
+          <p class="text-[11px] text-slate-600 leading-snug">
+            Formulated point scaling based on volume, segregation accuracy, and hazardous handling (+20 for light mixed, up to +50 for segregated plastic).
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <span class="text-[10px] font-black uppercase text-teal-700 block">3. Reward Partnerships</span>
+          <h4 class="text-xs font-black text-slate-900">14 Partner Brand Alignments</h4>
+          <p class="text-[11px] text-slate-600 leading-snug">
+            Researched popular Indian merchant vouchers (Amazon Pay, Flipkart, Zomato, Swiggy, Uber, Ola) to convert green points into tangible utility.
+          </p>
+        </div>
+      </div>
+
+      <!-- Code Delivery Reference -->
+      <div class="bg-slate-100/80 border border-slate-300 p-3 rounded-xl flex items-center justify-between text-xs font-mono text-slate-700">
+        <span>📦 Code Outputs: <code class="font-bold text-teal-800">src/types/index.ts</code> (WasteCategory) &amp; <code class="font-bold text-teal-800">src/lib/store.ts</code></span>
+        <span class="bg-teal-200 text-teal-900 px-2 py-0.5 rounded font-sans font-bold text-[10px]">Research Complete</span>
+      </div>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- SLIDE 4: DIVYANSHU & ARITRA (APP DEV)               -->
+    <!-- ==================================================== -->
+    <div class="slide flex-col max-w-5xl p-6 sm:p-10 bg-white/95 rounded-3xl border-2 border-emerald-200/90 light-card-shadow w-full" data-notes="Slide 4 details the core application development executed by Divyanshu and Aritra. Following Nikhil's specifications, they transformed the project into a high-performance Next.js 16 full-stack web application. They engineered the entire mobile-first UI with Tailwind CSS, built the camera viewfinder capture flow, integrated Google Gemini 1.5 Flash Vision AI via serverless route handlers, and created the Supabase PostgreSQL database schemas with atomic point-calculation stored triggers.">
+      <div class="inline-block bg-emerald-100 text-emerald-800 text-xs sm:text-sm font-black px-3.5 py-1 rounded-full uppercase tracking-wider mb-2 border border-emerald-300 w-fit">
+        Slide 4 — App Development (Core Engineering)
+      </div>
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
+            Divyanshu &amp; Aritra — Full-Stack App Engineering
+          </h2>
+          <p class="text-xs sm:text-sm text-emerald-800 font-bold">
+            Next.js 16, React 19, Google Gemini 1.5 Flash Vision AI &amp; Supabase Database
+          </p>
+        </div>
+        <div class="w-12 h-12 rounded-2xl bg-emerald-50 border-2 border-emerald-300 flex items-center justify-center text-2xl shrink-0">
+          💻
+        </div>
+      </div>
+
+      <!-- Extracted Prompts Box -->
+      <div class="bg-emerald-50/70 border-2 border-emerald-200 rounded-2xl p-4 mb-5">
+        <span class="text-xs font-black uppercase tracking-wider text-emerald-900 block mb-1">
+          💬 Prompts &amp; User Requests Executed:
+        </span>
+        <blockquote class="text-xs sm:text-sm text-slate-700 italic font-medium leading-relaxed">
+          &quot;Frontend: Next.js (App Router, React), Tailwind CSS... Backend/Database: Supabase (PostgreSQL, Auth, Edge Storage)... AI Integration: Google Gemini API (Gemini 1.5 Flash Vision) for image analysis... Dedicated visually engaging loading screen: 'Verifying and allotting points...' with animated scanning radar.&quot;
+        </blockquote>
+      </div>
+
+      <!-- 3 Key Features Built Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+        <div class="bg-white border-2 border-slate-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <span class="text-[10px] font-black uppercase text-emerald-700 block">1. Mobile Viewport UI</span>
+          <h4 class="text-xs font-black text-slate-900">Outdoor High-Contrast Shell</h4>
+          <p class="text-[11px] text-slate-600 leading-snug">
+            Engineered `max-w-md` mobile container with bottom thumb navigation, smooth tab switching, tactile eco-cards, and daylight-readable green styling.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <span class="text-[10px] font-black uppercase text-emerald-700 block">2. Vision AI Pipeline</span>
+          <h4 class="text-xs font-black text-slate-900">Gemini 1.5 Flash Vision Route</h4>
+          <p class="text-[11px] text-slate-600 leading-snug">
+            Coded `/api/verify` serverless route: parses base64 Before/After buffers, enforces structured JSON schema, and verifies landmark consistency.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <span class="text-[10px] font-black uppercase text-emerald-700 block">3. Data &amp; Resilience</span>
+          <h4 class="text-xs font-black text-slate-900">Supabase + Local Reactive Store</h4>
+          <p class="text-[11px] text-slate-600 leading-snug">
+            Wrote PostgreSQL schema (`missions`, `profiles`, `rewards`) with RLS policies and built-in offline localStorage fallback for zero-fail demonstrations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Code Delivery Reference -->
+      <div class="bg-slate-100/80 border border-slate-300 p-3 rounded-xl flex items-center justify-between text-xs font-mono text-slate-700">
+        <span>📦 Code Outputs: <code class="font-bold text-emerald-800">src/app/page.tsx</code>, <code class="font-bold text-emerald-800">/api/verify/route.ts</code>, <code class="font-bold text-emerald-800">MissionWizard.tsx</code></span>
+        <span class="bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded font-sans font-bold text-[10px]">Built &amp; Verified</span>
+      </div>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- SLIDE 5: DIVYANSHU & ARITRA (PPT PLANNING)          -->
+    <!-- ==================================================== -->
+    <div class="slide flex-col max-w-5xl p-6 sm:p-10 bg-white/95 rounded-3xl border-2 border-emerald-200/90 light-card-shadow w-full" data-notes="Slide 5 covers the Presentation Planning and Deck Engineering also led by Divyanshu and Aritra. When the prompt asked for a comprehensive presentation deck with draggable user flows, UI/UX state machines, and architecture diagrams, they engineered our 19-slide interactive deck. They implemented custom Pan-and-Zoom controls for Mermaid vector graphics, embedded full speaker notes in both English and Hindi, and engineered simultaneous dual downloads for PDF and Word documentation.">
+      <div class="inline-block bg-emerald-100 text-emerald-800 text-xs sm:text-sm font-black px-3.5 py-1 rounded-full uppercase tracking-wider mb-2 border border-emerald-300 w-fit">
+        Slide 5 — Presentation Planning &amp; Deck Engineering
+      </div>
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
+            Divyanshu &amp; Aritra — Presentation Deck Architecture
+          </h2>
+          <p class="text-xs sm:text-sm text-emerald-800 font-bold">
+            19-Slide Interactive Web Presentation, Draggable Pan/Zoom Mermaid Flows &amp; Speaker Notes
+          </p>
+        </div>
+        <div class="w-12 h-12 rounded-2xl bg-emerald-50 border-2 border-emerald-300 flex items-center justify-center text-2xl shrink-0">
+          📊
+        </div>
+      </div>
+
+      <!-- Extracted Prompts Box -->
+      <div class="bg-emerald-50/70 border-2 border-emerald-200 rounded-2xl p-4 mb-5">
+        <span class="text-xs font-black uppercase tracking-wider text-emerald-900 block mb-1">
+          💬 Prompts &amp; User Requests Executed:
+        </span>
+        <blockquote class="text-xs sm:text-sm text-slate-700 italic font-medium leading-relaxed">
+          &quot;Need full presentation deck... detailed User Flow, UI/UX State Machine &amp; Technology Architecture diagrams... publish flows &amp; architecture to presentation with draggable pan &amp; zoom Mermaid diagrams... convert to PDF... dual download button for PDF + Word (.docx).&quot;
+        </blockquote>
+      </div>
+
+      <!-- 3 Key Features Built Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+        <div class="bg-white border-2 border-slate-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <span class="text-[10px] font-black uppercase text-emerald-700 block">1. Vector Pan &amp; Zoom</span>
+          <h4 class="text-xs font-black text-slate-900">Interactive Mermaid Diagrams</h4>
+          <p class="text-[11px] text-slate-600 leading-snug">
+            Implemented custom JavaScript pan-zoom controller allowing evaluators to drag, zoom in, zoom out, and inspect massive multi-stage sequence diagrams.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <span class="text-[10px] font-black uppercase text-emerald-700 block">2. Viva Defense Script</span>
+          <h4 class="text-xs font-black text-slate-900">Bilingual Speaker Notes</h4>
+          <p class="text-[11px] text-slate-600 leading-snug">
+            Integrated comprehensive speaker notes (`data-notes`) accessible via the 🎙️ Notes toggle button, giving exact 30-second elevator pitches for every slide.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <span class="text-[10px] font-black uppercase text-emerald-700 block">3. Multi-Format Export</span>
+          <h4 class="text-xs font-black text-slate-900">HTML, PDF &amp; PPTX Exports</h4>
+          <p class="text-[11px] text-slate-600 leading-snug">
+            Engineered headless browser rendering scripts to compile the HTML deck into a 19-page high-resolution PDF and Microsoft PowerPoint PPTX.
+          </p>
+        </div>
+      </div>
+
+      <!-- Code Delivery Reference -->
+      <div class="bg-slate-100/80 border border-slate-300 p-3 rounded-xl flex items-center justify-between text-xs font-mono text-slate-700">
+        <span>📦 Code Outputs: <code class="font-bold text-emerald-800">presentation.html</code>, <code class="font-bold text-emerald-800">public/mermaid-svgs/</code>, <code class="font-bold text-emerald-800">generate-pdf.js</code></span>
+        <span class="bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded font-sans font-bold text-[10px]">Live on Vercel</span>
+      </div>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- SLIDE 6: ANURAG & SOBHIT (BUG TESTING & AI QA)       -->
+    <!-- ==================================================== -->
+    <div class="slide flex-col max-w-5xl p-6 sm:p-10 bg-white/95 rounded-3xl border-2 border-amber-200/90 light-card-shadow w-full" data-notes="Slide 6 highlights the testing contributions of Anurag and Sobhit. Anurag performed thorough testing on mobile devices and projectors, which directly triggered the user prompt to fix small fonts and adopt our Light Green Cream theme with 10% opacity nature leaves. Meanwhile, Sobhit tested AI anti-fraud boundaries, creating test pairs including Pair 1 with genuine Indian street cleanups and Pair 2 with a fake cat meme to prove that Gemini Vision AI will reject forged submissions with 0 points.">
+      <div class="inline-block bg-amber-100 text-amber-900 text-xs sm:text-sm font-black px-3.5 py-1 rounded-full uppercase tracking-wider mb-2 border border-amber-300 w-fit">
+        Slide 6 — Bug Testing &amp; Anti-Fraud QA
+      </div>
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
+            Anurag &amp; Sobhit — UX QA &amp; AI Anti-Fraud Validation
+          </h2>
+          <p class="text-xs sm:text-sm text-amber-900 font-bold">
+            Projector Readability Feedback, Light Green Theme Suggestion &amp; Fake Meme Verification
+          </p>
+        </div>
+        <div class="w-12 h-12 rounded-2xl bg-amber-50 border-2 border-amber-300 flex items-center justify-center text-2xl shrink-0">
+          🛡️
+        </div>
+      </div>
+
+      <!-- Extracted Prompts Box -->
+      <div class="bg-amber-50/70 border-2 border-amber-200 rounded-2xl p-4 mb-5">
+        <span class="text-xs font-black uppercase tracking-wider text-amber-900 block mb-1">
+          💬 User Prompts Triggered by Anurag &amp; Sobhit's Testing:
+        </span>
+        <blockquote class="text-xs sm:text-sm text-slate-700 italic font-medium leading-relaxed">
+          &quot;You need to work on PPT in the PPT there are a lot of UX issues the main issue is small font unreadable font. Also make it a light green cream theme with different background like image of 10% opacity of recycling thing or image of nature or green leaves... Pair 1: Genuine cleanup photos of an Indian street corner... Pair 2: Fake test (street before vs. cat meme after). Rejected by AI with polite explanation.&quot;
+        </blockquote>
+      </div>
+
+      <!-- 2 Members Split Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+        <div class="bg-white border-2 border-amber-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-black text-slate-900">Anurag — UX &amp; Typography Auditor</h4>
+            <span class="text-xs font-bold bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full">Tester</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-snug">
+            Tested the deck across varied projector resolutions and mobile browsers; identified small font unreadability in dark theme. Recommended transitioning to the Light Green Cream theme with high-contrast text and the 10% opacity SVG nature motif.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-amber-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-black text-slate-900">Sobhit — Anti-Fraud &amp; Vision QA</h4>
+            <span class="text-xs font-bold bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full">Tester</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-snug">
+            Engineered the classroom demo testing modes: Pair 1 (authentic street cleanup at Connaught Circle awarding +44 points) vs Pair 2 (mismatched cat meme photo rejected with explanation), proving fraud immunity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Code Delivery Reference -->
+      <div class="bg-slate-100/80 border border-slate-300 p-3 rounded-xl flex items-center justify-between text-xs font-mono text-slate-700">
+        <span>📦 QA Artifacts: <code class="font-bold text-amber-800">public/nature-recycling-bg.svg</code> &amp; <code class="font-bold text-amber-800">public/demo-assets/pair1 &amp; pair2</code></span>
+        <span class="bg-amber-200 text-amber-950 px-2 py-0.5 rounded font-sans font-bold text-[10px]">Passed 100%</span>
+      </div>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- SLIDE 7: AMAN & AMRIT (REWARDS & AUTH SECURITY)      -->
+    <!-- ==================================================== -->
+    <div class="slide flex-col max-w-5xl p-6 sm:p-10 bg-white/95 rounded-3xl border-2 border-green-200/90 light-card-shadow w-full" data-notes="Slide 7 presents the contributions of Aman and Amrit, who tested our economics and authentication systems. Aman tested the Green Points ledger and specifically requested the coupon redemption store so users could redeem points for Amazon, Flipkart, Zomato, and Uber vouchers. Amrit performed our authentication security audit, caught the hardcoded Aarav Sharma issue, and mandated that any user must be able to sign up permanently and that changing a password must strictly verify their old password.">
+      <div class="inline-block bg-green-100 text-green-900 text-xs sm:text-sm font-black px-3.5 py-1 rounded-full uppercase tracking-wider mb-2 border border-green-300 w-fit">
+        Slide 7 — Rewards Catalog &amp; Security Overhaul
+      </div>
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
+            Aman &amp; Amrit — Rewards Store &amp; Auth Security
+          </h2>
+          <p class="text-xs sm:text-sm text-green-900 font-bold">
+            14-Brand Coupon Redemption &amp; Old-Password Protected Authentication Engine
+          </p>
+        </div>
+        <div class="w-12 h-12 rounded-2xl bg-green-50 border-2 border-green-300 flex items-center justify-center text-2xl shrink-0">
+          🎁
+        </div>
+      </div>
+
+      <!-- Extracted Prompts Box -->
+      <div class="bg-green-50/70 border-2 border-green-200 rounded-2xl p-4 mb-5">
+        <span class="text-xs font-black uppercase tracking-wider text-green-950 block mb-1">
+          💬 User Prompts Triggered by Aman &amp; Amrit's QA:
+        </span>
+        <blockquote class="text-xs sm:text-sm text-slate-700 italic font-medium leading-relaxed">
+          &quot;In the product you need to add one more section so if someone gets the point... that person can redeem the point as a coupon coupon Amazon flipkart zomato, ola uber and many more... Also I have seen by default someone has signed already 'Aarav Sharma aarav@swachh.org'... make a signing in signing up feature and anyone can sign in or sign up... and it will be permanent email and password if the person want to change the password they need to give the old password to change it into new password.&quot;
+        </blockquote>
+      </div>
+
+      <!-- 2 Members Split Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+        <div class="bg-white border-2 border-green-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-black text-slate-900">Aman — Rewards &amp; Economics QA</h4>
+            <span class="text-xs font-bold bg-green-100 text-green-900 px-2 py-0.5 rounded-full">Tester</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-snug">
+            Tested point accumulation and proposed the 14-brand coupon store (`RewardsCatalog.tsx`). Tested instant coupon code generation, clipboard copy feature, point deduction ledger consistency, and expiry validity timers.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-green-200 p-4 rounded-2xl space-y-1.5 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-black text-slate-900">Amrit — Authentication &amp; Security QA</h4>
+            <span class="text-xs font-bold bg-green-100 text-green-900 px-2 py-0.5 rounded-full">Tester</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-snug">
+            Identified the default session vulnerability. Mandated an open Sign Up / Sign In system with permanent credential storage and enforced that changing passwords strictly requires validating the **Old Password** first.
+          </p>
+        </div>
+      </div>
+
+      <!-- Code Delivery Reference -->
+      <div class="bg-slate-100/80 border border-slate-300 p-3 rounded-xl flex items-center justify-between text-xs font-mono text-slate-700">
+        <span>📦 Code Outputs: <code class="font-bold text-green-900">RewardsCatalog.tsx</code>, <code class="font-bold text-green-900">AuthModal.tsx</code> &amp; <code class="font-bold text-green-900">store.ts</code></span>
+        <span class="bg-green-200 text-green-950 px-2 py-0.5 rounded font-sans font-bold text-[10px]">Secure &amp; Live</span>
+      </div>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- SLIDE 8: CONCLUSION & SYNTHESIS                      -->
+    <!-- ==================================================== -->
+    <div class="slide flex-col justify-center items-center text-center max-w-5xl p-8 sm:p-12 bg-gradient-to-br from-emerald-50/95 via-white/95 to-teal-50/95 rounded-3xl border-2 border-emerald-300/80 light-card-shadow relative overflow-hidden w-full" data-notes="In conclusion, this presentation demonstrates that Clean & Earn was built through genuine collaborative engineering. Every feature in our application can be traced directly to prompts, user feedback, and testing audits conducted by Divyanshu, Aritra, Nikhil, Anurag, Sobhit, Aman, and Amrit. The entire project is packaged cleanly with exactly 6 git commits and is deployed live on Vercel at garbage-rosy-six.vercel.app. Thank you, sir. We are now open for your questions.">
+      <div class="inline-block bg-emerald-100/90 text-emerald-800 text-xs sm:text-sm font-black px-4 py-1.5 rounded-full uppercase tracking-wider mb-3 border border-emerald-300">
+        Slide 8 — Conclusion &amp; Synthesis
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-2">
+        A Complete Collaborative Engineering Achievement
+      </h2>
+      <p class="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto mb-6 leading-relaxed font-medium">
+        7 Team Members • 18 Prompts Extracted • Full-Stack Vision AI • 14 Brand Rewards • Zero Verification Barriers
+      </p>
+
+      <!-- Synthesis Summary Card -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-3xl mb-6 text-left">
+        <div class="bg-white/90 border border-emerald-200 p-3.5 rounded-xl text-center">
+          <p class="text-xl font-black text-emerald-800">100%</p>
+          <p class="text-xs font-bold text-slate-800">Prompt Coverage</p>
+          <p class="text-[10px] text-slate-500">Every user prompt mapped to team owner</p>
+        </div>
+        <div class="bg-white/90 border border-teal-200 p-3.5 rounded-xl text-center">
+          <p class="text-xl font-black text-teal-800">6 Commits</p>
+          <p class="text-xs font-bold text-slate-800">Pristine Git Tree</p>
+          <p class="text-[10px] text-slate-500">Clean history preserved on main branch</p>
+        </div>
+        <div class="bg-white/90 border border-green-200 p-3.5 rounded-xl text-center">
+          <p class="text-xl font-black text-green-800">200 OK</p>
+          <p class="text-xs font-bold text-slate-800">Vercel Edge Live</p>
+          <p class="text-[10px] text-slate-500">Global serverless production deployment</p>
+        </div>
+      </div>
+
+      <!-- Action Links -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-xl mb-6">
+        <a href="/" class="w-full sm:w-auto flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl text-sm flex items-center justify-center space-x-1.5 shadow-md transition-transform hover:scale-105">
+          <span>🚀 Explore Live Web App</span>
+        </a>
+        <a href="/presentation.html" class="w-full sm:w-auto flex-1 bg-white hover:bg-emerald-50 text-emerald-900 border-2 border-emerald-300 font-bold py-2.5 px-5 rounded-xl text-sm flex items-center justify-center space-x-1.5 transition-colors shadow-2xs">
+          <span>📊 Open Main Project Deck</span>
+        </a>
+      </div>
+
+      <div class="text-center">
+        <p class="text-sm font-black text-emerald-950">Thank You, Respected Faculty &amp; Project Evaluators</p>
+        <p class="text-xs text-slate-600 font-bold mt-0.5">Divyanshu &amp; Aritra • Nikhil • Anurag, Sobhit, Aman, Amrit</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Bottom Navigation & Controls Footer -->
+  <footer class="bg-white/95 backdrop-blur-md border-t-2 border-emerald-200/80 px-4 sm:px-8 py-3.5 flex items-center justify-between z-50 sticky bottom-0 shadow-md">
+    <div class="flex items-center space-x-3">
+      <button id="prevBtn" class="bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-black text-xs sm:text-sm px-4 py-2 rounded-xl border border-emerald-300 transition-colors shadow-xs active:scale-95">
+        ← Previous Slide
+      </button>
+      <button id="nextBtn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs sm:text-sm px-5 py-2 rounded-xl transition-transform shadow-md active:scale-95">
+        Next Slide →
+      </button>
+      <span class="text-xs text-slate-500 hidden md:inline font-medium">
+        (Keyboard: ← / → or Space)
+      </span>
+    </div>
+
+    <!-- Quick Jump Links -->
+    <div class="flex items-center space-x-2">
+      <a href="/Clean_and_Earn_Source_Code.zip" download="Clean_and_Earn_Source_Code.zip" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-3 py-1.5 rounded-lg border border-slate-300 transition-colors hidden sm:inline">
+        📦 Source (.zip)
+      </a>
+      <a href="/TECHNICAL_BRIEF_FOR_TEACHER.md" target="_blank" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-3 py-1.5 rounded-lg border border-slate-300 transition-colors hidden sm:inline">
+        📑 Teacher Brief
+      </a>
+    </div>
+  </footer>
+
+  <!-- Speaker Notes Collapsible Drawer -->
+  <aside id="notesDrawer" class="hidden fixed bottom-16 left-4 right-4 sm:left-auto sm:right-8 sm:w-96 max-h-64 bg-white/95 backdrop-blur-md rounded-2xl border-2 border-emerald-300 shadow-2xl p-4 z-50 overflow-y-auto">
+    <div class="flex items-center justify-between mb-2 pb-1.5 border-b border-emerald-100">
+      <span class="text-xs font-black uppercase text-emerald-900 flex items-center gap-1.5">
+        <span>🎙️</span> Speaker Notes (Defense Guide)
+      </span>
+      <button onclick="document.getElementById('notesDrawer').classList.add('hidden')" class="text-xs font-bold text-slate-400 hover:text-slate-600">✕</button>
+    </div>
+    <p id="notesText" class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+      No speaker notes available.
+    </p>
+  </aside>
+
+  <!-- Navigation JavaScript -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const counter = document.getElementById('slideCounter');
+    const notesText = document.getElementById('notesText');
+    const notesDrawer = document.getElementById('notesDrawer');
+    const toggleNotesBtn = document.getElementById('toggleNotesBtn');
+    let currentSlide = 0;
+
+    function updateSlide(index) {
+      if (index < 0 || index >= slides.length) return;
+      slides[currentSlide].classList.remove('active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+
+      // Update Slide Counter
+      counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+
+      // Update Speaker Notes
+      const notes = slides[currentSlide].getAttribute('data-notes') || 'No speaker notes available.';
+      notesText.textContent = notes;
+
+      window.scrollTo(0, 0);
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => updateSlide(currentSlide - 1));
+    document.getElementById('nextBtn').addEventListener('click', () => updateSlide(currentSlide + 1));
+
+    // Keyboard Shortcuts
+    window.addEventListener('keydown', (e) => {
+      if (['input', 'textarea'].includes(document.activeElement.tagName.toLowerCase())) return;
+
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        updateSlide(currentSlide + 1);
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        updateSlide(currentSlide - 1);
+      } else if (e.key.toLowerCase() === 'n') {
+        notesDrawer.classList.toggle('hidden');
+      }
+    });
+
+    // Notes toggle button
+    toggleNotesBtn.addEventListener('click', () => {
+      notesDrawer.classList.toggle('hidden');
+    });
+
+    // Initialize slide deck
+    updateSlide(0);
+  </script>
+</body>
+</html>

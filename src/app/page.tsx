@@ -7,8 +7,10 @@ import { Dashboard } from '@/components/Dashboard';
 import { MissionWizard } from '@/components/MissionWizard';
 import { HistoryLedger } from '@/components/HistoryLedger';
 import { Leaderboard } from '@/components/Leaderboard';
+import { RewardsCatalog } from '@/components/RewardsCatalog';
 import { AuthModal } from '@/components/AuthModal';
 import { SettingsModal } from '@/components/SettingsModal';
+import { TeamModal } from '@/components/TeamModal';
 import { getUser, getMissions, DEFAULT_USER } from '@/lib/store';
 import { UserProfile, Mission } from '@/types';
 
@@ -19,6 +21,7 @@ export default function Home() {
   const [selectedMission, setSelectedMission] = useState<Mission | null>(null);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isTeamOpen, setIsTeamOpen] = useState(false);
 
   // Sync initial state on client
   useEffect(() => {
@@ -41,6 +44,10 @@ export default function Home() {
     setActiveTab('history');
   };
 
+  const handleGoToRewards = () => {
+    setActiveTab('rewards');
+  };
+
   const handleTriggerDemoPair = (pairNumber: 1 | 2) => {
     setActiveTab('wizard');
   };
@@ -54,6 +61,7 @@ export default function Home() {
           user={user}
           onOpenSettings={() => setIsSettingsOpen(true)}
           onOpenAuth={() => setIsAuthOpen(true)}
+          onOpenTeam={() => setIsTeamOpen(true)}
         />
 
         {/* Scrollable Main Content Container */}
@@ -69,6 +77,8 @@ export default function Home() {
                 setActiveTab('history');
               }}
               onTriggerDemoPair={handleTriggerDemoPair}
+              onOpenRewards={handleGoToRewards}
+              onOpenTeam={() => setIsTeamOpen(true)}
             />
           )}
 
@@ -76,6 +86,7 @@ export default function Home() {
             <MissionWizard
               onSuccess={handleMissionSuccess}
               onCancel={() => setActiveTab('dashboard')}
+              onGoToRewards={handleGoToRewards}
             />
           )}
 
@@ -85,6 +96,14 @@ export default function Home() {
               selectedMission={selectedMission}
               onSelectMission={setSelectedMission}
               onStartNewMission={handleStartMission}
+            />
+          )}
+
+          {activeTab === 'rewards' && (
+            <RewardsCatalog
+              user={user}
+              onPointsUpdated={refreshData}
+              onStartMission={handleStartMission}
             />
           )}
 
@@ -111,6 +130,12 @@ export default function Home() {
           onClose={() => setIsSettingsOpen(false)}
           onDataReset={refreshData}
           onTriggerDemoPair={handleTriggerDemoPair}
+          onOpenTeam={() => setIsTeamOpen(true)}
+        />
+
+        <TeamModal
+          isOpen={isTeamOpen}
+          onClose={() => setIsTeamOpen(false)}
         />
       </div>
     </div>

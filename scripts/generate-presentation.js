@@ -87,29 +87,30 @@ async function createPresentation() {
   }
 
   // ==========================================
-  // SLIDE 1: TITLE SLIDE
+  // SLIDE 1: TITLE SLIDE (LIGHT GREEN CREAM THEME)
   // ==========================================
   {
     const slide = pres.addSlide();
-    slide.background = { color: COLORS.darkGreen };
+    slide.background = { color: 'F8FAF6' };
 
     // Decorative shape
     slide.addShape(pres.ShapeType.rect, {
       x: 0.8,
       y: 0.8,
-      w: 1.8,
-      h: 0.35,
-      fill: { color: '047857' },
+      w: 2.8,
+      h: 0.4,
+      fill: { color: 'DCFCE7' },
+      line: { color: '10B981', width: 1.5 },
       roundCorners: true,
     });
-    slide.addText('SWACHH BHARAT TECH INITIATIVE', {
+    slide.addText('🇮🇳 SWACHH BHARAT TECH INITIATIVE', {
       x: 0.8,
       y: 0.8,
-      w: 1.8,
-      h: 0.35,
-      fontSize: 8,
+      w: 2.8,
+      h: 0.4,
+      fontSize: 10,
       bold: true,
-      color: 'FFFFFF',
+      color: '065F46',
       align: 'center',
     });
 
@@ -117,35 +118,35 @@ async function createPresentation() {
       x: 0.8,
       y: 1.4,
       w: 8.4,
-      h: 0.8,
+      h: 0.85,
       fontFace: FONTS.title,
-      fontSize: 38,
+      fontSize: 44,
       bold: true,
-      color: 'FFFFFF',
+      color: '0F172A',
     });
 
     slide.addText('SafaiSaathi (सफ़ाई साथी) — Gamifying Civic Cleanliness in India', {
       x: 0.8,
-      y: 2.2,
+      y: 2.25,
       w: 8.4,
-      h: 0.4,
+      h: 0.45,
       fontFace: FONTS.title,
-      fontSize: 16,
+      fontSize: 18,
       bold: true,
-      color: 'A7F3D0',
+      color: '047857',
     });
 
     slide.addText(
       'A full-stack mobile web platform connecting civic responsibility with multimodal AI verification, photographic proof, and verifiable reward points.',
       {
         x: 0.8,
-        y: 2.7,
-        w: 7.5,
-        h: 0.6,
+        y: 2.75,
+        w: 8.0,
+        h: 0.65,
         fontFace: FONTS.body,
-        fontSize: 12,
-        color: 'E2E8F0',
-        lineSpacing: 18,
+        fontSize: 13,
+        color: '334155',
+        lineSpacing: 19,
       }
     );
 
@@ -153,33 +154,33 @@ async function createPresentation() {
     slide.addShape(pres.ShapeType.rect, {
       x: 0.8,
       y: 3.5,
-      w: 5.5,
-      h: 0.7,
-      fill: { color: '065F46' },
-      line: { color: '10B981', width: 1 },
+      w: 6.2,
+      h: 0.75,
+      fill: { color: 'FFFFFF' },
+      line: { color: '10B981', width: 1.5 },
       roundCorners: true,
     });
     slide.addText('🌐 Live Production Deployment on Vercel:\nhttps://garbage-rosy-six.vercel.app', {
       x: 0.9,
       y: 3.55,
-      w: 5.3,
-      h: 0.6,
+      w: 6.0,
+      h: 0.65,
       fontFace: FONTS.body,
-      fontSize: 10,
-      color: 'FFFFFF',
+      fontSize: 11,
+      color: '065F46',
       bold: true,
     });
 
     // Tech Highlights Pills
     slide.addText('Next.js 16  •  Tailwind CSS  •  Supabase PostgreSQL  •  Google Gemini Vision AI', {
       x: 0.8,
-      y: 4.5,
+      y: 4.45,
       w: 8.4,
       h: 0.4,
       fontFace: FONTS.body,
-      fontSize: 11,
+      fontSize: 12,
       bold: true,
-      color: 'FDE68A',
+      color: '047857',
     });
 
     slide.addNotes(
@@ -1271,11 +1272,12 @@ async function createPresentation() {
   }
 
   // ==========================================
-  // SLIDE 13: CONCLUSION
+  // ==========================================
+  // SLIDE 18: CONCLUSION (LIGHT GREEN CREAM THEME)
   // ==========================================
   {
     const slide = pres.addSlide();
-    slide.background = { color: COLORS.darkGreen };
+    slide.background = { color: 'F8FAF6' };
 
     slide.addText('CONCLUSION', {
       x: 0.8,
@@ -1285,7 +1287,7 @@ async function createPresentation() {
       fontFace: FONTS.title,
       fontSize: 12,
       bold: true,
-      color: 'A7F3D0',
+      color: '065F46',
       letterSpacing: 2,
     });
 
@@ -1295,19 +1297,19 @@ async function createPresentation() {
       w: 8.4,
       h: 0.6,
       fontFace: FONTS.title,
-      fontSize: 32,
+      fontSize: 34,
       bold: true,
-      color: 'FFFFFF',
+      color: '0F172A',
     });
 
     // Summary Card
     slide.addShape(pres.ShapeType.rect, {
       x: 0.8,
-      y: 1.7,
+      y: 1.65,
       w: 8.4,
-      h: 1.7,
-      fill: { color: '065F46' },
-      line: { color: '10B981', width: 1 },
+      h: 1.85,
+      fill: { color: 'FFFFFF' },
+      line: { color: '10B981', width: 2 },
       roundCorners: true,
     });
 
@@ -1321,33 +1323,33 @@ async function createPresentation() {
     conclusions.forEach((c, idx) => {
       slide.addText(`✔  ${c}`, {
         x: 1.0,
-        y: 1.85 + idx * 0.36,
+        y: 1.8 + idx * 0.4,
         w: 8.0,
-        h: 0.32,
+        h: 0.35,
         fontFace: FONTS.body,
-        fontSize: 10,
-        color: 'E2E8F0',
+        fontSize: 12,
+        color: '1E293B',
       });
     });
 
     // Final Message Quote Box
     slide.addShape(pres.ShapeType.rect, {
       x: 0.8,
-      y: 3.65,
+      y: 3.7,
       w: 8.4,
-      h: 0.95,
+      h: 1.0,
       fill: { color: 'FEF3C7' },
-      line: { color: 'F59E0B', width: 1 },
+      line: { color: 'F59E0B', width: 1.5 },
       roundCorners: true,
     });
 
     slide.addText('"A cleaner environment begins when small individual actions become a shared community habit."', {
       x: 1.0,
-      y: 3.75,
+      y: 3.8,
       w: 8.0,
       h: 0.45,
       fontFace: FONTS.title,
-      fontSize: 13,
+      fontSize: 14,
       bold: true,
       color: '92400E',
       align: 'center',
@@ -1355,11 +1357,11 @@ async function createPresentation() {
 
     slide.addText('Clean & Earn — Encouraging Action, Rewarding Responsibility.', {
       x: 1.0,
-      y: 4.25,
+      y: 4.3,
       w: 8.0,
       h: 0.3,
       fontFace: FONTS.body,
-      fontSize: 10.5,
+      fontSize: 11.5,
       bold: true,
       color: 'B45309',
       align: 'center',
@@ -1367,12 +1369,13 @@ async function createPresentation() {
 
     slide.addText('Thank You, Sir! Any Questions?  |  Live at https://garbage-rosy-six.vercel.app', {
       x: 0.8,
-      y: 4.85,
+      y: 4.95,
       w: 8.4,
-      h: 0.3,
+      h: 0.35,
       fontFace: FONTS.body,
-      fontSize: 10,
-      color: 'A7F3D0',
+      fontSize: 12,
+      bold: true,
+      color: '065F46',
       align: 'center',
     });
 

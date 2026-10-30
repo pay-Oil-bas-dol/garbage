@@ -28,7 +28,7 @@ const TOP_USERS = [
   },
   {
     rank: 2,
-    name: 'Aarav Sharma (You)',
+    name: 'You',
     city: 'New Delhi',
     points: 187, // dynamically computed or overridden
     missions: 5,
@@ -75,6 +75,7 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({ user }) => {
         ...u,
         points: user.total_points,
         name: `${user.name} (You)`,
+        city: user.city || u.city,
       };
     }
     return u;

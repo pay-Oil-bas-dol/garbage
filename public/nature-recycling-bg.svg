@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      .eco-leaf { fill: #047857; }
+      .eco-recycle { fill: none; stroke: #065F46; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+      .eco-sprout { fill: #059669; }
+      .eco-globe { fill: none; stroke: #047857; stroke-width: 6; }
+      .eco-dot { fill: #10B981; }
+    </style>
+  </defs>
+
+  <!-- Eco Motif 1: Recycling Triangle (Top-Left) -->
+  <g transform="translate(60, 60) scale(0.7)">
+    <path class="eco-recycle" d="M 40,-40 C 65,-40 75,-15 75,10 L 85,2 M 75,10 L 60,18" />
+    <path class="eco-recycle" d="M 60,35 C 45,65 15,65 -15,65 L -8,78 M -15,65 L -10,50" />
+    <path class="eco-recycle" d="M -35,50 C -65,30 -65,-5 -45,-30 L -55,-20 M -45,-30 L -30,-32" />
+  </g>
+
+  <!-- Eco Motif 2: Lush Curved Leaf (Top-Right) -->
+  <g transform="translate(310, 80) rotate(25) scale(0.85)">
+    <path class="eco-leaf" d="M 0,-60 C 45,-45 60,15 0,60 C -60,15 -45,-45 0,-60 Z" />
+    <path d="M 0,-50 L 0,55" stroke="#ECFDF5" stroke-width="4" stroke-linecap="round" />
+    <path d="M 0,-20 Q 20,-10 30,-5" stroke="#ECFDF5" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M 0,5 Q 20,15 28,22" stroke="#ECFDF5" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M 0,-10 Q -20,0 -28,5" stroke="#ECFDF5" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M 0,15 Q -20,25 -26,32" stroke="#ECFDF5" stroke-width="3" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- Eco Motif 3: Sprouting Seedling (Center) -->
+  <g transform="translate(200, 210) scale(0.9)">
+    <path d="M 0,45 Q 0,-15 15,-35" stroke="#047857" stroke-width="6" stroke-linecap="round" fill="none" />
+    <path class="eco-sprout" d="M 0,-10 C -25,-30 -35,5 0,0 Z" />
+    <path class="eco-sprout" d="M 12,-30 C 35,-50 45,-15 10,-20 Z" />
+    <circle cx="0" cy="48" r="4" class="eco-dot" />
+  </g>
+
+  <!-- Eco Motif 4: Second Leaf Motif (Bottom-Left) -->
+  <g transform="translate(90, 310) rotate(-40) scale(0.75)">
+    <path class="eco-leaf" d="M 0,-50 C 35,-35 50,10 0,50 C -50,10 -35,-35 0,-50 Z" />
+    <path d="M 0,-40 L 0,45" stroke="#ECFDF5" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M 0,-15 Q 18,-8 25,-4" stroke="#ECFDF5" stroke-width="2.5" stroke-linecap="round" fill="none" />
+    <path d="M 0,-5 Q -18,2 -24,6" stroke="#ECFDF5" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- Eco Motif 5: Recycle Arrow Circle (Bottom-Right) -->
+  <g transform="translate(310, 310) scale(0.7)">
+    <path class="eco-recycle" d="M 40,-40 C 65,-40 75,-15 75,10 L 85,2 M 75,10 L 60,18" />
+    <path class="eco-recycle" d="M 60,35 C 45,65 15,65 -15,65 L -8,78 M -15,65 L -10,50" />
+    <path class="eco-recycle" d="M -35,50 C -65,30 -65,-5 -45,-30 L -55,-20 M -45,-30 L -30,-32" />
+  </g>
+
+  <!-- Floating nature accent dots / seeds -->
+  <circle cx="180" cy="70" r="6" class="eco-dot" />
+  <circle cx="50" cy="190" r="5" class="eco-dot" />
+  <circle cx="350" cy="200" r="7" class="eco-dot" />
+  <circle cx="210" cy="350" r="6" class="eco-dot" />
+  <circle cx="130" cy="230" r="4" class="eco-dot" />
+  <circle cx="280" cy="140" r="5" class="eco-dot" />
+</svg>

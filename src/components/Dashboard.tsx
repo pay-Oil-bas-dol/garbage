@@ -5,14 +5,8 @@ import {
   Sparkles,
   Camera,
   MapPin,
-  Calendar,
-  CheckCircle2,
-  XCircle,
   ArrowRight,
   TrendingUp,
-  Award,
-  ShieldCheck,
-  Eye,
 } from 'lucide-react';
 import { UserProfile, Mission } from '@/types';
 import { PointsBanner } from './PointsBanner';
@@ -23,7 +17,9 @@ interface DashboardProps {
   onStartMission: () => void;
   onViewAllHistory: () => void;
   onSelectMission: (mission: Mission) => void;
-  onTriggerDemoPair: (pairNumber: 1 | 2) => void;
+  onTriggerDemoPair?: (pairNumber: 1 | 2) => void;
+  onOpenRewards?: () => void;
+  onOpenTeam?: () => void;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({
@@ -32,14 +28,14 @@ export const Dashboard: React.FC<DashboardProps> = ({
   onStartMission,
   onViewAllHistory,
   onSelectMission,
-  onTriggerDemoPair,
+  onOpenRewards,
 }) => {
   const recentMissions = missions.slice(0, 4);
 
   return (
-    <div className="space-y-5 pb-6">
+    <div className="space-y-4 pb-6">
       {/* Gamified Points Banner */}
-      <PointsBanner user={user} missions={missions} />
+      <PointsBanner user={user} missions={missions} onOpenRewards={onOpenRewards} />
 
       {/* Large Central "Start A Mission" Action Button */}
       <div className="relative">
@@ -67,46 +63,6 @@ export const Dashboard: React.FC<DashboardProps> = ({
             <ArrowRight className="w-4 h-4 text-white" />
           </div>
         </button>
-      </div>
-
-      {/* Presentation Quick-Demo Trigger Card */}
-      <div className="bg-gradient-to-br from-amber-50 to-orange-50/60 rounded-2xl p-3.5 border border-amber-200/90 shadow-xs">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center space-x-1.5 text-xs font-bold text-amber-900">
-            <Sparkles className="w-4 h-4 text-amber-600" />
-            <span>Classroom Presentation Demo Modes:</span>
-          </div>
-          <span className="text-[10px] bg-amber-200/80 text-amber-950 font-bold px-2 py-0.5 rounded-full">
-            Live Testing
-          </span>
-        </div>
-        <div className="grid grid-cols-2 gap-2">
-          <button
-            onClick={() => onTriggerDemoPair(1)}
-            className="flex items-center space-x-2 p-2 bg-white hover:bg-emerald-50 text-emerald-900 rounded-xl border border-emerald-300 shadow-2xs transition-all text-left group"
-          >
-            <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
-              <CheckCircle2 className="w-4 h-4" />
-            </div>
-            <div>
-              <p className="text-[11px] font-bold leading-tight">Pair 1: Real Street</p>
-              <p className="text-[9px] text-slate-500">Genuine cleanup passes AI</p>
-            </div>
-          </button>
-
-          <button
-            onClick={() => onTriggerDemoPair(2)}
-            className="flex items-center space-x-2 p-2 bg-white hover:bg-rose-50 text-rose-900 rounded-xl border border-rose-300 shadow-2xs transition-all text-left group"
-          >
-            <div className="w-7 h-7 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center shrink-0">
-              <XCircle className="w-4 h-4" />
-            </div>
-            <div>
-              <p className="text-[11px] font-bold leading-tight">Pair 2: Fake Meme</p>
-              <p className="text-[9px] text-slate-500">Mismatched photo rejected</p>
-            </div>
-          </button>
-        </div>
       </div>
 
       {/* Mission History Ledger Section */}
