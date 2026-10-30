@@ -1,0 +1,1 @@
+Sample video proof file placeholder for mission uploads. Video uploads are optional and preserved in Supabase Storage as proof without AI token consumption.
