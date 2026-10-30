@@ -13,6 +13,10 @@ import {
   Award,
   ShieldCheck,
   Eye,
+  Gift,
+  Tag,
+  Presentation,
+  ExternalLink,
 } from 'lucide-react';
 import { UserProfile, Mission } from '@/types';
 import { PointsBanner } from './PointsBanner';
@@ -24,6 +28,7 @@ interface DashboardProps {
   onViewAllHistory: () => void;
   onSelectMission: (mission: Mission) => void;
   onTriggerDemoPair: (pairNumber: 1 | 2) => void;
+  onOpenRewards: () => void;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({
@@ -33,13 +38,42 @@ export const Dashboard: React.FC<DashboardProps> = ({
   onViewAllHistory,
   onSelectMission,
   onTriggerDemoPair,
+  onOpenRewards,
 }) => {
   const recentMissions = missions.slice(0, 4);
 
   return (
-    <div className="space-y-5 pb-6">
+    <div className="space-y-4 pb-6">
       {/* Gamified Points Banner */}
-      <PointsBanner user={user} missions={missions} />
+      <PointsBanner user={user} missions={missions} onOpenRewards={onOpenRewards} />
+
+      {/* Rewards Coupon Quick-Redeem Action Banner */}
+      <div
+        onClick={onOpenRewards}
+        className="cursor-pointer bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 hover:opacity-95 text-white p-3.5 rounded-2xl shadow-md shadow-orange-500/20 flex items-center justify-between transition-all active:scale-98"
+      >
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-xs flex items-center justify-center text-xl shrink-0">
+            🎁
+          </div>
+          <div>
+            <div className="flex items-center space-x-1.5">
+              <span className="text-xs font-black tracking-wide uppercase">
+                Redeem Green Points
+              </span>
+              <span className="text-[9px] bg-white text-orange-700 font-extrabold px-1.5 py-0.2 rounded-full">
+                14 Brands
+              </span>
+            </div>
+            <p className="text-[11px] text-orange-100 font-medium">
+              Amazon, Flipkart, Zomato, Ola, Uber vouchers &amp; coupons
+            </p>
+          </div>
+        </div>
+        <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+          <ArrowRight className="w-4 h-4 text-white" />
+        </div>
+      </div>
 
       {/* Large Central "Start A Mission" Action Button */}
       <div className="relative">
@@ -107,6 +141,20 @@ export const Dashboard: React.FC<DashboardProps> = ({
             </div>
           </button>
         </div>
+
+        {/* 18-Slide Presentation Deck Direct Link */}
+        <a
+          href="/presentation.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 w-full py-2 px-3 bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 rounded-xl flex items-center justify-between text-xs font-bold transition-all shadow-2xs"
+        >
+          <div className="flex items-center space-x-2">
+            <Presentation className="w-4 h-4 text-emerald-600" />
+            <span>Open Project Presentation (18 Slides Deck)</span>
+          </div>
+          <ExternalLink className="w-3.5 h-3.5 text-emerald-600" />
+        </a>
       </div>
 
       {/* Mission History Ledger Section */}

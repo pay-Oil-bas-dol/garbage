@@ -1,15 +1,16 @@
 'use client';
 
 import React from 'react';
-import { Award, TrendingUp, ShieldCheck, Trash2, Sparkles } from 'lucide-react';
+import { Award, TrendingUp, ShieldCheck, Trash2, Sparkles, Gift } from 'lucide-react';
 import { UserProfile, Mission } from '@/types';
 
 interface PointsBannerProps {
   user: UserProfile;
   missions: Mission[];
+  onOpenRewards?: () => void;
 }
 
-export const PointsBanner: React.FC<PointsBannerProps> = ({ user, missions }) => {
+export const PointsBanner: React.FC<PointsBannerProps> = ({ user, missions, onOpenRewards }) => {
   const approvedMissions = missions.filter((m) => m.status === 'approved');
   const totalApprovedPoints = approvedMissions.reduce((acc, m) => acc + m.points_awarded, 0);
   const displayPoints = user.total_points || totalApprovedPoints;
@@ -66,17 +67,30 @@ export const PointsBanner: React.FC<PointsBannerProps> = ({ user, missions }) =>
         <span className="text-[11px] text-emerald-200/90 font-medium">📍 {user.city || 'India'}</span>
       </div>
 
-      {/* Center: Prominent Points Display */}
-      <div className="flex items-baseline space-x-2 my-2 relative z-10">
-        <span className="text-4xl sm:text-5xl font-black tracking-tight text-white drop-shadow-xs">
-          {displayPoints}
-        </span>
-        <div className="flex flex-col">
-          <span className="text-sm font-bold uppercase tracking-wider text-emerald-300">
-            Eco Points
+      {/* Center: Prominent Points Display & Quick Redeem Pill */}
+      <div className="flex items-center justify-between my-2 relative z-10">
+        <div className="flex items-baseline space-x-2">
+          <span className="text-4xl sm:text-5xl font-black tracking-tight text-white drop-shadow-xs">
+            {displayPoints}
           </span>
-          <span className="text-[10px] text-emerald-200/80">Earn 20-50 pts per verified street</span>
+          <div className="flex flex-col">
+            <span className="text-sm font-bold uppercase tracking-wider text-emerald-300">
+              Eco Points
+            </span>
+            <span className="text-[10px] text-emerald-200/80">Earn 20-50 pts per verified street</span>
+          </div>
         </div>
+
+        {onOpenRewards && (
+          <button
+            onClick={onOpenRewards}
+            className="py-1.5 px-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-amber-950 font-black text-xs shadow-md shadow-amber-900/30 flex items-center space-x-1 transition-transform active:scale-95 shrink-0"
+            title="Redeem points for Amazon, Flipkart, Zomato coupons"
+          >
+            <Gift className="w-3.5 h-3.5 text-amber-900" />
+            <span>Redeem</span>
+          </button>
+        )}
       </div>
 
       {/* Level Progress Bar */}

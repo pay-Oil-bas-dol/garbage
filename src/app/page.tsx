@@ -7,6 +7,7 @@ import { Dashboard } from '@/components/Dashboard';
 import { MissionWizard } from '@/components/MissionWizard';
 import { HistoryLedger } from '@/components/HistoryLedger';
 import { Leaderboard } from '@/components/Leaderboard';
+import { RewardsCatalog } from '@/components/RewardsCatalog';
 import { AuthModal } from '@/components/AuthModal';
 import { SettingsModal } from '@/components/SettingsModal';
 import { getUser, getMissions, DEFAULT_USER } from '@/lib/store';
@@ -41,6 +42,10 @@ export default function Home() {
     setActiveTab('history');
   };
 
+  const handleGoToRewards = () => {
+    setActiveTab('rewards');
+  };
+
   const handleTriggerDemoPair = (pairNumber: 1 | 2) => {
     setActiveTab('wizard');
   };
@@ -69,6 +74,7 @@ export default function Home() {
                 setActiveTab('history');
               }}
               onTriggerDemoPair={handleTriggerDemoPair}
+              onOpenRewards={handleGoToRewards}
             />
           )}
 
@@ -76,6 +82,7 @@ export default function Home() {
             <MissionWizard
               onSuccess={handleMissionSuccess}
               onCancel={() => setActiveTab('dashboard')}
+              onGoToRewards={handleGoToRewards}
             />
           )}
 
@@ -85,6 +92,14 @@ export default function Home() {
               selectedMission={selectedMission}
               onSelectMission={setSelectedMission}
               onStartNewMission={handleStartMission}
+            />
+          )}
+
+          {activeTab === 'rewards' && (
+            <RewardsCatalog
+              user={user}
+              onPointsUpdated={refreshData}
+              onStartMission={handleStartMission}
             />
           )}
 

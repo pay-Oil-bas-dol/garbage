@@ -17,6 +17,7 @@ import {
   Trash2,
   Layers,
   FileCheck2,
+  Gift,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { WasteCategory, VerificationResponse, Mission } from '@/types';
@@ -25,6 +26,7 @@ import { addMission, getUser, getSavedGeminiKey } from '@/lib/store';
 interface MissionWizardProps {
   onSuccess: (newMission: Mission) => void;
   onCancel: () => void;
+  onGoToRewards?: () => void;
 }
 
 const CATEGORIES: { label: string; value: WasteCategory; icon: string; desc: string }[] = [
@@ -36,7 +38,11 @@ const CATEGORIES: { label: string; value: WasteCategory; icon: string; desc: str
   { label: 'Hazardous', value: 'Hazardous', icon: '⚠️', desc: 'Broken glass, chemicals, medical waste' },
 ];
 
-export const MissionWizard: React.FC<MissionWizardProps> = ({ onSuccess, onCancel }) => {
+export const MissionWizard: React.FC<MissionWizardProps> = ({
+  onSuccess,
+  onCancel,
+  onGoToRewards,
+}) => {
   // Wizard steps: 1 = Before & Setup, 2 = After & Proof, 3 = Verifying Loader, 4 = Result Screen
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
 
@@ -773,28 +779,41 @@ export const MissionWizard: React.FC<MissionWizardProps> = ({ onSuccess, onCance
               </div>
 
               {/* Actions */}
-              <div className="flex space-x-3 pt-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    // Reset wizard for another mission
-                    setBeforeImage('');
-                    setAfterImage('');
-                    setVideoFile(null);
-                    setVideoPreviewUrl('');
-                    setStep(1);
-                  }}
-                  className="flex-1 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs rounded-2xl transition-colors"
-                >
-                  Start Another Mission
-                </button>
-                <button
-                  type="button"
-                  onClick={onCancel}
-                  className="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-2xl shadow-md shadow-emerald-600/30 transition-all"
-                >
-                  View Mission Ledger
-                </button>
+              <div className="space-y-2.5 pt-2">
+                {onGoToRewards && (
+                  <button
+                    type="button"
+                    onClick={onGoToRewards}
+                    className="w-full py-3.5 bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 hover:opacity-95 text-white font-black text-xs rounded-2xl shadow-md shadow-orange-500/25 transition-all flex items-center justify-center space-x-2"
+                  >
+                    <Gift className="w-4 h-4 text-white" />
+                    <span>Redeem Points for Amazon / Flipkart / Zomato Coupons 🎁</span>
+                  </button>
+                )}
+
+                <div className="flex space-x-3">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      // Reset wizard for another mission
+                      setBeforeImage('');
+                      setAfterImage('');
+                      setVideoFile(null);
+                      setVideoPreviewUrl('');
+                      setStep(1);
+                    }}
+                    className="flex-1 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs rounded-2xl transition-colors"
+                  >
+                    Start Another Mission
+                  </button>
+                  <button
+                    type="button"
+                    onClick={onCancel}
+                    className="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-2xl shadow-md shadow-emerald-600/30 transition-all"
+                  >
+                    View Mission Ledger
+                  </button>
+                </div>
               </div>
             </div>
           ) : (

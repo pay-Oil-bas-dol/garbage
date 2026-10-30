@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Leaf, Award, Settings, UserCheck } from 'lucide-react';
+import { Leaf, Award, Settings, UserCheck, LogIn, User } from 'lucide-react';
 import { UserProfile } from '@/types';
 
 interface NavbarProps {
@@ -11,6 +11,8 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ user, onOpenSettings, onOpenAuth }) => {
+  const isGuest = user.isGuest || !user.email;
+
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-emerald-100 shadow-xs px-4 py-3 flex items-center justify-between">
       {/* Brand logo & tagline */}
@@ -40,22 +42,33 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onOpenSettings, onOpenAuth
           <span className="text-[10px] text-amber-700 font-semibold">pts</span>
         </div>
 
-        {/* User Avatar Button */}
-        <button
-          onClick={onOpenAuth}
-          title="Switch User / Auth"
-          className="relative p-1 rounded-full hover:bg-emerald-50 transition-colors focus:outline-none"
-        >
-          <div className="w-8 h-8 rounded-full ring-2 ring-emerald-500/30 overflow-hidden bg-emerald-100 flex items-center justify-center text-emerald-800 font-bold text-xs">
-            {user.avatar_url ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={user.avatar_url} alt={user.name} className="w-full h-full object-cover" />
-            ) : (
-              user.name.charAt(0)
-            )}
-          </div>
-          <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></span>
-        </button>
+        {/* User Auth Button */}
+        {isGuest ? (
+          <button
+            onClick={onOpenAuth}
+            className="flex items-center space-x-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black px-2.5 py-1.5 rounded-xl shadow-xs transition-colors"
+            title="Sign In or Sign Up"
+          >
+            <LogIn className="w-3.5 h-3.5" />
+            <span>Sign In</span>
+          </button>
+        ) : (
+          <button
+            onClick={onOpenAuth}
+            title={`Signed in as ${user.name} (${user.email}) - Click to switch or change password`}
+            className="relative p-0.5 rounded-full hover:bg-emerald-50 transition-colors focus:outline-none"
+          >
+            <div className="w-8 h-8 rounded-full ring-2 ring-emerald-500/40 overflow-hidden bg-emerald-100 flex items-center justify-center text-emerald-800 font-black text-xs">
+              {user.avatar_url ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={user.avatar_url} alt={user.name} className="w-full h-full object-cover" />
+              ) : (
+                user.name.charAt(0) || 'U'
+              )}
+            </div>
+            <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></span>
+          </button>
+        )}
 
         {/* Settings Button */}
         <button

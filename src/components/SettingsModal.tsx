@@ -13,6 +13,8 @@ import {
   Cpu,
   Download,
   FileCode,
+  Presentation,
+  FileText,
 } from 'lucide-react';
 import { getSavedGeminiKey, saveGeminiKey, resetDemoData } from '@/lib/store';
 import { isSupabaseConfigured } from '@/lib/supabase';
@@ -42,7 +44,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   };
 
   const handleReset = () => {
-    if (confirm('Reset all demo missions and restore default user Aarav Sharma?')) {
+    if (confirm('Reset all demo missions and restore default registered accounts?')) {
       resetDemoData();
       onDataReset();
       onClose();
@@ -131,6 +133,61 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               ? 'Real PostgreSQL database and edge storage active.'
               : 'App runs seamlessly in persistent offline storage mode. Configure NEXT_PUBLIC_SUPABASE_URL in .env to link real Supabase.'}
           </p>
+        </div>
+
+        {/* Project Presentation & Deck */}
+        <div className="bg-emerald-50/90 border border-emerald-300 rounded-2xl p-3.5 space-y-2.5 text-xs">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-1.5 font-bold text-emerald-950">
+              <Presentation className="w-4 h-4 text-emerald-700" />
+              <span>Project Presentation &amp; Slides:</span>
+            </div>
+            <span className="text-[10px] font-bold bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded-full">
+              18 Slides • Light Green
+            </span>
+          </div>
+          <p className="text-[11px] text-emerald-800 leading-normal">
+            Interactive presentation deck with draggable Mermaid architecture diagrams, pan/zoom, speaker notes, and 10% opacity nature background.
+          </p>
+          <div className="grid grid-cols-2 gap-2 pt-1">
+            <a
+              href="/presentation.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-2 px-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl text-[11px] flex items-center justify-center space-x-1.5 shadow-sm transition-all"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              <span>Open Deck (HTML)</span>
+            </a>
+            <a
+              href="/Clean_and_Earn_Presentation.pdf"
+              target="_blank"
+              download="Clean_and_Earn_Presentation.pdf"
+              className="py-2 px-2.5 bg-white hover:bg-emerald-100 text-emerald-900 font-bold rounded-xl text-[11px] flex items-center justify-center space-x-1.5 border border-emerald-300 shadow-2xs transition-all"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download PDF</span>
+            </a>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            <a
+              href="/Clean_and_Earn_Presentation.pptx"
+              download="Clean_and_Earn_Presentation.pptx"
+              className="py-1.5 px-2 bg-white hover:bg-emerald-100 text-emerald-900 font-bold rounded-xl text-[10px] flex items-center justify-center space-x-1 border border-emerald-300 transition-all"
+            >
+              <Download className="w-3 h-3" />
+              <span>Download PPTX</span>
+            </a>
+            <a
+              href="/TECHNICAL_BRIEF_FOR_TEACHER.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-1.5 px-2 bg-white hover:bg-emerald-100 text-emerald-900 font-bold rounded-xl text-[10px] flex items-center justify-center space-x-1 border border-emerald-300 transition-all"
+            >
+              <FileText className="w-3 h-3" />
+              <span>Teacher Brief</span>
+            </a>
+          </div>
         </div>
 
         {/* Project Source Code Download */}

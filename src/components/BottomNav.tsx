@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { Home, History, Trophy, Sparkles, PlusCircle } from 'lucide-react';
+import { Home, History, Trophy, Sparkles, Gift } from 'lucide-react';
 
-export type TabType = 'dashboard' | 'wizard' | 'history' | 'leaderboard' | 'settings';
+export type TabType = 'dashboard' | 'wizard' | 'history' | 'rewards' | 'leaderboard' | 'settings';
 
 interface BottomNavProps {
   activeTab: TabType;
@@ -22,7 +22,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
         {/* Home / Dashboard */}
         <button
           onClick={() => onChangeTab('dashboard')}
-          className={`flex flex-col items-center py-1 px-2.5 rounded-xl transition-all ${
+          className={`flex flex-col items-center py-1 px-2 rounded-xl transition-all ${
             activeTab === 'dashboard'
               ? 'text-emerald-700 font-semibold'
               : 'text-slate-500 hover:text-emerald-600'
@@ -35,7 +35,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
         {/* History Ledger */}
         <button
           onClick={() => onChangeTab('history')}
-          className={`flex flex-col items-center py-1 px-2.5 rounded-xl transition-all ${
+          className={`flex flex-col items-center py-1 px-2 rounded-xl transition-all ${
             activeTab === 'history'
               ? 'text-emerald-700 font-semibold'
               : 'text-slate-500 hover:text-emerald-600'
@@ -59,10 +59,23 @@ export const BottomNav: React.FC<BottomNavProps> = ({
           </span>
         </div>
 
+        {/* Rewards / Coupons */}
+        <button
+          onClick={() => onChangeTab('rewards')}
+          className={`flex flex-col items-center py-1 px-2 rounded-xl transition-all ${
+            activeTab === 'rewards'
+              ? 'text-emerald-700 font-semibold'
+              : 'text-slate-500 hover:text-emerald-600'
+          }`}
+        >
+          <Gift className="w-5 h-5 mb-0.5" />
+          <span className="text-[10px]">Rewards</span>
+        </button>
+
         {/* Leaderboard */}
         <button
           onClick={() => onChangeTab('leaderboard')}
-          className={`flex flex-col items-center py-1 px-2.5 rounded-xl transition-all ${
+          className={`flex flex-col items-center py-1 px-2 rounded-xl transition-all ${
             activeTab === 'leaderboard'
               ? 'text-emerald-700 font-semibold'
               : 'text-slate-500 hover:text-emerald-600'
@@ -70,19 +83,6 @@ export const BottomNav: React.FC<BottomNavProps> = ({
         >
           <Trophy className="w-5 h-5 mb-0.5" />
           <span className="text-[10px]">Rankings</span>
-        </button>
-
-        {/* Quick New Mission shortcut */}
-        <button
-          onClick={() => onChangeTab('wizard')}
-          className={`flex flex-col items-center py-1 px-2.5 rounded-xl transition-all ${
-            activeTab === 'wizard'
-              ? 'text-emerald-700 font-semibold'
-              : 'text-slate-500 hover:text-emerald-600'
-          }`}
-        >
-          <PlusCircle className="w-5 h-5 mb-0.5" />
-          <span className="text-[10px]">Mission</span>
         </button>
       </div>
     </nav>

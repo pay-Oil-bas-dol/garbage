@@ -16,6 +16,11 @@ export interface UserProfile {
   avatar_url?: string;
   city?: string;
   created_at?: string;
+  isGuest?: boolean;
+}
+
+export interface RegisteredAccount extends UserProfile {
+  password: string;
 }
 
 export interface Mission {
@@ -54,4 +59,36 @@ export interface LeaderboardEntry {
   missionsCount: number;
   badge: string;
   isCurrentUser?: boolean;
+}
+
+export type RewardCategory = 'all' | 'shopping' | 'food' | 'rides' | 'groceries' | 'eco';
+
+export interface RewardCoupon {
+  id: string;
+  brand: 'Amazon' | 'Flipkart' | 'Zomato' | 'Swiggy' | 'Ola' | 'Uber' | 'Blinkit' | 'Delhi Metro' | 'Decathlon';
+  title: string;
+  description: string;
+  pointsCost: number;
+  discountValue: string;
+  category: RewardCategory;
+  logoEmoji: string;
+  brandColor: string;
+  bgLight: string;
+  terms: string;
+  popular?: boolean;
+}
+
+export interface RedeemedCoupon {
+  id: string;
+  rewardId: string;
+  brand: string;
+  title: string;
+  discountValue: string;
+  couponCode: string;
+  pointsSpent: number;
+  redeemedAt: string;
+  expiresAt: string;
+  status: 'active' | 'used';
+  logoEmoji: string;
+  brandColor: string;
 }
